@@ -67,11 +67,26 @@ void test5() {
     });
 }
 
+void test6() {
+    shared_ptr<string> sp;
+    cout << sp.unique() << endl;
+    sp.reset(new string("Hello World"));
+    shared_ptr<string> sp2(sp);
+    cout << sp.unique() << " and use count is " << sp.use_count() << endl;
+}
+
+void test7() {
+    shared_ptr<string> sp(new string("Hello World"));
+    cout << sp << endl;
+}
+
 int main(int argc, char *argv[]) {
-    test1();
-    test2();
-    test3();
-    test4();
-    test5();
+    // test1();
+    // test2();
+    // test3();
+    // test4();
+    // test5();
+    // test6();
+    test7();
     return 0;
 }
